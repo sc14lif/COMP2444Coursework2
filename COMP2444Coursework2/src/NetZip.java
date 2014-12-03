@@ -47,12 +47,11 @@ public class NetZip {
 	}
 
 	private void talktoServer() {
-		System.out.println("Trying to talk to server");
+		//System.out.println("Trying to talk to server");
 		try{
 			PrintWriter socketOut = new PrintWriter(socket.getOutputStream(), true);
 			String content;
 				while ((content = inputFileReader.readLine()) != null) {
-					System.out.println(content);
 					socketOut.println(content);
 					}
 				socketOut.println("End of transmission");
@@ -63,7 +62,7 @@ public class NetZip {
 	}
 	
 	private void readFromServer() throws IOException {
-		System.out.println("Trying to read from server");
+		//System.out.println("Trying to read from server");
 		File targetFile = new File(NetZipFileName);
 		 
 		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -71,13 +70,11 @@ public class NetZip {
 		
 		String line = null;
 		while((line=in.readLine())!= null){
-
-			System.out.println(line);
 			out.write(line);
 			out.newLine();
 		}
 
-	    System.out.println("read from server");
+	    //System.out.println("read from server");
 	    out.close();
 	}
 

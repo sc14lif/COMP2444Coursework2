@@ -29,21 +29,20 @@ public class ClientHandler extends Thread implements Runnable {
 	@Override
 	public void run() {
 		try {
-			System.out.println("ClientHandler running");
+			//System.out.println("ClientHandler running");
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			out = new BufferedWriter(new OutputStreamWriter(new GZIPOutputStream(socket.getOutputStream())));
-			System.out.println("Got the two streams");
+			//System.out.println("Got the two streams");
 			String line = null;
 			while((line=in.readLine())!= null){
 				if(line.equals("End of transmission")){
 					break;
 				}
-				System.out.println(line);
 				out.write(line);
 				out.newLine();
 			}
 			out.close();
-			System.out.println("client handler run finished");
+			//System.out.println("client handler run finished");
 		}
 		catch(FileNotFoundException e){
 			e.printStackTrace();

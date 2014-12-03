@@ -1,3 +1,9 @@
 /ClientHandler.class
 /NetZip.class
 /ZipServer.class
+/NetZipGUI.class
+/NetZipGUI$selectFileButton.class
+/NetZipGUI$submitFileButton.class
+/FileChooserTest.class
+/FileChooserTest$OpenL.class
+/FileChooserTest$SaveL.class
